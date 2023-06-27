@@ -8,16 +8,20 @@
 import SwiftUI
 import StoreKit
 
-struct AboutView: View {
+public struct JUIAboutView: View {
     @Environment(\.requestReview) var requestReview
-    var body: some View {
-        List {
+    public var mailLink: String
+    public init(mailLink: String) {
+        self.mailLink = mailLink
+    }
+    public var body: some View {
+        Group {
             Section {
                 AboutViewItem(sfSymbol: "link", header: "My Twitter", subtext: "Reach out to me") {
                     UIApplication.shared.open(URL(string: "https://twitter.com/julianfbeck")!)
                 }
                 AboutViewItem(sfSymbol: "envelope", header: "Give Feedback", subtext: "Send me an email") {
-                    UIApplication.shared.open(URL(string: "mailto:glanceforgitlab@julianbeck.com")!)
+                    UIApplication.shared.open(URL(string: "mailto:\(mailLink)")!)
                 }
                 AboutViewItem(sfSymbol: "envelope", header: "My Website", subtext: "Check out my Website") {
                     UIApplication.shared.open(URL(string: "https://juli.sh")!)
@@ -56,8 +60,10 @@ struct AboutViewItem: View {
 
 
 
-struct AboutView_Previews: PreviewProvider {
+struct JUIAboutView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView()
+        List {
+            JUIAboutView(mailLink: "bexk@juli.sh")
+        }
     }
 }
