@@ -25,7 +25,7 @@ public struct CustomImageViewModifier: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     func roundedColoredSfSymbol(size: CGFloat, color: Color) -> some View {
         self.modifier(CustomImageViewModifier(size: size, color: color))
     }
