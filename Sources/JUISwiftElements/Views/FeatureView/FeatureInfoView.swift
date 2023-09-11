@@ -13,12 +13,13 @@ struct FeatureInfoView: View {
     var title = "Seamless Transitions"
     var description = "120 Hz refresh rate"
     var imageName = "battery.100"
+    var color: Color = .blue
 
     var body: some View {
         HStack(alignment: .center) {
             Image(systemName: imageName)
                 .font(.largeTitle)
-                .foregroundColor(.blue)
+                .foregroundColor(color)
                 .padding()
                 .accessibility(hidden: true)
                 .frame(minWidth: 88)

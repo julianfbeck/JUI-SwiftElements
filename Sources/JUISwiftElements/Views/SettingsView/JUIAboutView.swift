@@ -11,11 +11,26 @@ import StoreKit
 public struct JUIAboutView: View {
     @Environment(\.requestReview) var requestReview
     public var mailLink: String
-    public init(mailLink: String) {
+    public var privacyPolicyLink: String
+    public var termsOfServiceLink: String
+    
+    public init(mailLink: String, privacyPolicyLink: String, termsOfServiceLink: String) {
         self.mailLink = mailLink
+        self.privacyPolicyLink = privacyPolicyLink
+        self.termsOfServiceLink = termsOfServiceLink
     }
     public var body: some View {
         Group {
+            Section {
+                AboutViewItem(sfSymbol: "lock", header: "Privacy Policy", subtext: "Read our privacy policy") {
+                    UIApplication.shared.open(URL(string: "https://juli.sh/privacy")!)
+                }
+                AboutViewItem(sfSymbol: "doc.text", header: "Terms of Service", subtext: "Read our terms of service") {
+                    UIApplication.shared.open(URL(string: "https://juli.sh/terms")!)
+                }
+            } header: {
+                Text("Legal").textCase(nil).font(.title2).fontWeight(.bold)
+            }
             Section {
                 AboutViewItem(sfSymbol: "link", header: "My Twitter", subtext: "Reach out to me") {
                     UIApplication.shared.open(URL(string: "https://twitter.com/julianfbeck")!)
@@ -26,6 +41,7 @@ public struct JUIAboutView: View {
                 AboutViewItem(sfSymbol: "envelope", header: "My Website", subtext: "Check out my Website") {
                     UIApplication.shared.open(URL(string: "https://juli.sh")!)
                 }
+                
             } header: {
                 Text("Get in Touch").textCase(nil).font(.title2).fontWeight(.bold)
             }
@@ -47,14 +63,17 @@ struct AboutViewItem: View {
     var subtext: String
     let onClick: () -> Void
     var body: some View {
-        HStack {
-            Image(systemName: sfSymbol).roundedColoredSfSymbol(size: 22, color: .blue)
-            VStack(alignment: .leading) {
-                Text(header).font(.headline).fontWeight(.bold)
-                Text(subtext).font(.caption).foregroundColor(.gray).fontWeight(.bold)
-            }
-        }.padding(.vertical,1)
-        
+        Button {
+            onClick()
+        } label: {
+            HStack {
+                Image(systemName: sfSymbol).roundedColoredSfSymbol(size: 22, color: .blue)
+                VStack(alignment: .leading) {
+                    Text(header).font(.headline).fontWeight(.bold)
+                    Text(subtext).font(.caption).foregroundColor(.gray).fontWeight(.bold)
+                }
+            }.padding(.vertical,1)
+        }.buttonStyle(.plain)
     }
 }
 
@@ -63,7 +82,7 @@ struct AboutViewItem: View {
 struct JUIAboutView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            JUIAboutView(mailLink: "bexk@juli.sh")
+            JUIAboutView(mailLink: "bexk@juli.sh", privacyPolicyLink: "https://juli.sh/privacy", termsOfServiceLink: "https://juli.sh/terms")
         }
     }
 }

@@ -13,6 +13,7 @@ import SwiftUI
 struct TitleView: View {
     var name: String
     var subtext: String
+    var color: Color
 
     var body: some View {
         VStack {
@@ -25,7 +26,7 @@ struct TitleView: View {
                 Text(subtext)
                     .fontWeight(.black)
                     .font(.system(size: 36))
-                    .foregroundColor(.blue)
+                    .foregroundColor(color)
             }
         }
     }
@@ -33,6 +34,6 @@ struct TitleView: View {
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
-        TitleView(name: "test", subtext: "test")
+        TitleView(name: "test", subtext: "test", color: .blue)
     }
 }

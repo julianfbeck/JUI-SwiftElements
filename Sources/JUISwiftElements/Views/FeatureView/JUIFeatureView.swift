@@ -8,32 +8,45 @@
 
 
 import SwiftUI
-public struct Feature {
+public struct FeatureData {
     let title: String
     let description: String
     let imageName: String
+    let color: Color
+    
+    
+    
+    public init(title: String, description: String, imageName: String, color: Color ) {
+        self.title = title
+        self.description = description
+        self.imageName = imageName
+        self.color = color
+    }
 }
 // MARK: - FeatureView
 /* Usage
  JUIFeatureView(name: "Test", subtext: "subtext", features: []){
-    print("button has been pressed")
+ print("button has been pressed")
  }
-*/
+ */
 public struct JUIFeatureView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    public var name: String
-    public var subtext : String
-    public var features: [Feature]
-    public var buttonColor: Color = .blue
-    public var dismissAfterAction = true
-    public var onButtonPressed: () -> Void
+    var name: String
+    var subtext : String
+    var features: [FeatureData]
+    var buttonColor: Color
+    var dismissAfterAction = true
+    var buttonText: String
+    var onButtonPressed: () -> Void
     
     
-    public init(name: String, subtext: String, features: [Feature], onButtonPressed: @escaping () -> Void) {
+    public init(name: String, subtext: String, features: [FeatureData], buttonText: String, buttonColor: Color, onButtonPressed: @escaping () -> Void) {
         self.name = name
         self.subtext = subtext
         self.features = features
         self.onButtonPressed = onButtonPressed
+        self.buttonText = buttonText
+        self.buttonColor = buttonColor
     }
     
     public var body: some View {
@@ -41,7 +54,7 @@ public struct JUIFeatureView: View {
             VStack {
                 ScrollView {
                     VStack(alignment: .center, spacing: 32) {
-                        TitleView(name: name, subtext: subtext)
+                        TitleView(name: name, subtext: subtext, color: buttonColor)
                         FeaturesContainerView(features: features)
                         Spacer()
                         
@@ -56,7 +69,8 @@ public struct JUIFeatureView: View {
                                     .frame(height: 55)
                                     .foregroundColor(buttonColor)
                                     .cornerRadius(10)
-                                Text("Test")
+                                Text(buttonText)
+                                    .font(.system(size: 20, weight: .heavy))
                                     .foregroundColor(.white)
                             }
                             

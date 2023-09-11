@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct FeaturesContainerView: View {
-   var features: [Feature]
+   var features: [FeatureData]
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -17,7 +18,8 @@ struct FeaturesContainerView: View {
                 FeatureInfoView(
                     title: feature.title,
                     description: feature.description,
-                    imageName: feature.imageName
+                    imageName: feature.imageName,
+                    color: feature.color
                 )
             }
         }
