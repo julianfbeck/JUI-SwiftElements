@@ -72,7 +72,10 @@ struct AboutViewItem: View {
                     Text(header).font(.headline).fontWeight(.bold)
                     Text(subtext).font(.caption).foregroundColor(.gray).fontWeight(.bold)
                 }
-            }.padding(.vertical,1)
+                Spacer()
+            }.padding(.vertical,1).contentShape(Rectangle())
+
+            
         }.buttonStyle(.plain)
     }
 }

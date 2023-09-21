@@ -30,7 +30,9 @@ public struct FeatureData {
  }
  */
 public struct JUIFeatureView: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var buttonPressed = false
     var name: String
     var subtext : String
     var features: [FeatureData]
@@ -38,15 +40,20 @@ public struct JUIFeatureView: View {
     var dismissAfterAction = true
     var buttonText: String
     var onButtonPressed: () -> Void
+    var onDismiss: () -> Void = {}
     
     
-    public init(name: String, subtext: String, features: [FeatureData], buttonText: String, buttonColor: Color, onButtonPressed: @escaping () -> Void) {
+    
+    
+    public init(name: String, subtext: String, features: [FeatureData], buttonText: String, buttonColor: Color, dismissAfterAction: Bool = true, onDismiss: @escaping () -> Void, onButtonPressed: @escaping () -> Void) {
         self.name = name
         self.subtext = subtext
         self.features = features
         self.onButtonPressed = onButtonPressed
+        self.dismissAfterAction = dismissAfterAction
         self.buttonText = buttonText
         self.buttonColor = buttonColor
+        self.onDismiss = onDismiss
     }
     
     public var body: some View {
@@ -59,6 +66,8 @@ public struct JUIFeatureView: View {
                         Spacer()
                         
                         Button {
+                            buttonPressed = true
+                            
                             onButtonPressed()
                             if dismissAfterAction {
                                 self.presentationMode.wrappedValue.dismiss()
@@ -69,16 +78,25 @@ public struct JUIFeatureView: View {
                                     .frame(height: 55)
                                     .foregroundColor(buttonColor)
                                     .cornerRadius(10)
-                                Text(buttonText)
-                                    .font(.system(size: 20, weight: .heavy))
-                                    .foregroundColor(.white)
+                                if buttonPressed {
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                } else {
+                                    
+                                    Text(buttonText)
+                                        .font(.system(size: 20, weight: .heavy))
+                                        .foregroundColor(.white)
+                                }
+                                
                             }
                             
                         }.padding()
                     }
                 }
             }
-            .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()}) { Image(systemName: "xmark.circle.fill")
+            .navigationBarItems(leading: Button(action: {
+                self.onDismiss()
+            }) { Image(systemName: "xmark.circle.fill")
                 .font(.system(size: 20, weight: .heavy)) })
             
         }
