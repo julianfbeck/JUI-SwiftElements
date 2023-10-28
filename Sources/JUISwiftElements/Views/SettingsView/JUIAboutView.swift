@@ -13,6 +13,7 @@ public struct JUIAboutView: View {
     public var mailLink: String
     public var privacyPolicyLink: String
     public var termsOfServiceLink: String
+    public var highlightColor: Color = .blue
     
     public init(mailLink: String, privacyPolicyLink: String, termsOfServiceLink: String) {
         self.mailLink = mailLink
@@ -22,23 +23,23 @@ public struct JUIAboutView: View {
     public var body: some View {
         Group {
             Section {
-                AboutViewItem(sfSymbol: "lock", header: "Privacy Policy", subtext: "Read our privacy policy") {
+                AboutViewItem(sfSymbol: "lock", header: "Privacy Policy", subtext: "Read our privacy policy", highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://juli.sh/privacy")!)
                 }
-                AboutViewItem(sfSymbol: "doc.text", header: "Terms of Service", subtext: "Read our terms of service") {
+                AboutViewItem(sfSymbol: "doc.text", header: "Terms of Service", subtext: "Read our terms of service" , highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://juli.sh/terms")!)
                 }
             } header: {
                 Text("Legal").textCase(nil).font(.title2).fontWeight(.bold)
             }
             Section {
-                AboutViewItem(sfSymbol: "link", header: "My Twitter", subtext: "Reach out to me") {
+                AboutViewItem(sfSymbol: "link", header: "My Twitter", subtext: "Reach out to me" , highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://twitter.com/julianfbeck")!)
                 }
-                AboutViewItem(sfSymbol: "envelope", header: "Give Feedback", subtext: "Send me an email") {
+                AboutViewItem(sfSymbol: "envelope", header: "Give Feedback", subtext: "Send me an email" , highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "mailto:\(mailLink)")!)
                 }
-                AboutViewItem(sfSymbol: "envelope", header: "My Website", subtext: "Check out my Website") {
+                AboutViewItem(sfSymbol: "envelope", header: "My Website", subtext: "Check out my Website" , highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://juli.sh")!)
                 }
                 
@@ -46,7 +47,7 @@ public struct JUIAboutView: View {
                 Text("Get in Touch").textCase(nil).font(.title2).fontWeight(.bold)
             }
             Section {
-                AboutViewItem(sfSymbol: "star.fill", header: "Rate and Review", subtext: "Rate and review this app on the App Store") {
+                AboutViewItem(sfSymbol: "star.fill", header: "Rate and Review", subtext: "Rate and review this app on the App Store" , highlightColor: highlightColor) {
                     requestReview()
                 }
             } header: {
@@ -61,13 +62,15 @@ struct AboutViewItem: View {
     var sfSymbol: String
     var header: String
     var subtext: String
+    var highlightColor: Color
     let onClick: () -> Void
+
     var body: some View {
         Button {
             onClick()
         } label: {
             HStack {
-                Image(systemName: sfSymbol).roundedColoredSfSymbol(size: 22, color: .blue)
+                Image(systemName: sfSymbol).roundedColoredSfSymbol(size: 22, color: highlightColor)
                 VStack(alignment: .leading) {
                     Text(header).font(.headline).fontWeight(.bold)
                     Text(subtext).font(.caption).foregroundColor(.gray).fontWeight(.bold)
