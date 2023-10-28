@@ -13,12 +13,13 @@ public struct JUIAboutView: View {
     public var mailLink: String
     public var privacyPolicyLink: String
     public var termsOfServiceLink: String
-    public var highlightColor: Color = .blue
+    public var highlightColor: Color
     
-    public init(mailLink: String, privacyPolicyLink: String, termsOfServiceLink: String) {
+    public init(mailLink: String, privacyPolicyLink: String, termsOfServiceLink: String, highlightColor: Color = .blue) {
         self.mailLink = mailLink
         self.privacyPolicyLink = privacyPolicyLink
         self.termsOfServiceLink = termsOfServiceLink
+        self.highlightColor = highlightColor
     }
     public var body: some View {
         Group {
