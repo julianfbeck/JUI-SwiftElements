@@ -21,44 +21,46 @@ public struct JUIAboutView: View {
         self.termsOfServiceLink = termsOfServiceLink
         self.highlightColor = highlightColor
     }
+
     public var body: some View {
         Group {
             Section {
-                AboutViewItem(sfSymbol: "lock", header: "Privacy Policy", subtext: "Read our privacy policy", highlightColor: highlightColor) {
-                    UIApplication.shared.open(URL(string: "https://juli.sh/privacy")!)
+                AboutViewItem(sfSymbol: "lock", header: String(localized: "Privacy Policy"), subtext: String(localized: "Read our privacy policy"), highlightColor: highlightColor) {
+                    UIApplication.shared.open(URL(string: privacyPolicyLink)!)
                 }
-                AboutViewItem(sfSymbol: "doc.text", header: "Terms of Service", subtext: "Read our terms of service" , highlightColor: highlightColor) {
-                    UIApplication.shared.open(URL(string: "https://juli.sh/terms")!)
+                AboutViewItem(sfSymbol: "doc.text", header: String(localized: "Terms of Service"), subtext: String(localized: "Read our terms of service"), highlightColor: highlightColor) {
+                    UIApplication.shared.open(URL(string: termsOfServiceLink)!)
                 }
             } header: {
-                Text("Legal").textCase(nil).font(.title2).fontWeight(.bold)
+                Text(String(localized: "Legal")).textCase(nil).font(.title2).fontWeight(.bold)
             }
+
             Section {
-                AboutViewItem(sfSymbol: "link", header: "My Twitter", subtext: "Reach out to me" , highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "link", header: String(localized: "My Twitter"), subtext: String(localized: "Reach out to me"), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://twitter.com/julianfbeck")!)
                 }
-                AboutViewItem(sfSymbol: "envelope", header: "Give Feedback", subtext: "Send me an email" , highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "envelope", header: String(localized: "Give Feedback"), subtext: String(localized: "Send me an email"), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "mailto:\(mailLink)")!)
                 }
-                AboutViewItem(sfSymbol: "envelope", header: "My Website", subtext: "Check out my Website" , highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "envelope", header: String(localized: "My Website"), subtext: String(localized: "Check out my Website"), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://juli.sh")!)
                 }
                 
             } header: {
-                Text("Get in Touch").textCase(nil).font(.title2).fontWeight(.bold)
+                Text(String(localized: "Get in Touch")).textCase(nil).font(.title2).fontWeight(.bold)
             }
+
             Section {
-                AboutViewItem(sfSymbol: "star.fill", header: "Rate and Review", subtext: "Rate and review this app on the App Store" , highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "star.fill", header: String(localized: "Rate and Review"), subtext: String(localized: "Rate and review this app on the App Store"), highlightColor: highlightColor) {
                     requestReview()
                 }
             } header: {
-                Text("Send Some Love").textCase(nil).font(.title2).fontWeight(.bold)
+                Text(String(localized: "Send Some Love")).textCase(nil).font(.title2).fontWeight(.bold)
             }
         }.listStyle(.insetGrouped)
         
     }
 }
-
 struct AboutViewItem: View {
     var sfSymbol: String
     var header: String
