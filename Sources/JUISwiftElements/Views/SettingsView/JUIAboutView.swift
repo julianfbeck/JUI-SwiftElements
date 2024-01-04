@@ -25,7 +25,7 @@ public struct JUIAboutView: View {
     public var body: some View {
         Group {
             Section {
-                AboutViewItem(sfSymbol: "lock", header: String(localized: "Privacy Policy"), subtext: String(localized: "Read our privacy policy"), highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "lock", header: String(localized: "Privacy Policy", bundle: .module ), subtext: String(localized: "Read our privacy policy"), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: privacyPolicyLink)!)
                 }
                 AboutViewItem(sfSymbol: "doc.text", header: String(localized: "Terms of Service"), subtext: String(localized: "Read our terms of service"), highlightColor: highlightColor) {
