@@ -15,7 +15,7 @@ public struct squarcleModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .imageScale(.small)
-            .font(.system(size: 15))
+            .font(.system(size: size-7))
             .frame(width: size, height: size, alignment: .center)
             .foregroundColor(color) // SF Symbol color
             .font(.headline)
