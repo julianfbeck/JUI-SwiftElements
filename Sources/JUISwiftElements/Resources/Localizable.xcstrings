@@ -1,54 +1,136 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "Check out my Website" : {
-
+  "sourceLanguage": "en",
+  "strings": {
+    "Check out my Website": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Besuchen Sie meine Webseite"
+          }
+        }
+      }
     },
-    "Get in Touch" : {
-
+    "Get in Touch": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kontakt aufnehmen"
+          }
+        }
+      }
     },
-    "Give Feedback" : {
-
+    "Give Feedback": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback geben"
+          }
+        }
+      }
     },
-    "Hello, World!" : {
-
+    "Hello, World!": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallo, Welt!"
+          }
+        }
+      }
     },
-    "Legal" : {
-
+    "Legal": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechtliches"
+          }
+        }
+      }
     },
-    "My Twitter" : {
-
+    "Privacy Policy": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenschutzbestimmungen"
+          }
+        }
+      }
     },
-    "My Website" : {
-
+    "Rate and Review": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewerten und Rezensieren"
+          }
+        }
+      }
     },
-    "Privacy Policy" : {
-
+    "Rate and review this app on the App Store": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewerten und rezensieren Sie diese App im App Store"
+          }
+        }
+      }
     },
-    "Rate and Review" : {
-
+    "Reach out to me": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kontaktieren Sie mich"
+          }
+        }
+      }
     },
-    "Rate and review this app on the App Store" : {
-
+    "Read our privacy policy": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lesen Sie unsere Datenschutzbestimmungen"
+          }
+        }
+      }
     },
-    "Reach out to me" : {
-
+    "Read our terms of service": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lesen Sie unsere Nutzungsbedingungen"
+          }
+        }
+      }
     },
-    "Read our privacy policy" : {
-
+    "Send me an email": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schicken Sie mir eine E-Mail"
+          }
+        }
+      }
     },
-    "Read our terms of service" : {
-
-    },
-    "Send me an email" : {
-
-    },
-    "Send Some Love" : {
-
-    },
-    "Terms of Service" : {
-
+    "Send Some Love": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schicken Sie etwas Liebe"
+          }
+        }
+      }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
