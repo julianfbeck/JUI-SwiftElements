@@ -1,136 +1,169 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "Check out my Website": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Besuchen Sie meine Webseite"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Check out my Website" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Besuchen Sie meine Webseite"
           }
         }
       }
     },
-    "Get in Touch": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kontakt aufnehmen"
+    "Get in Touch" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakt aufnehmen"
           }
         }
       }
     },
-    "Give Feedback": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Feedback geben"
+    "Give Feedback" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback geben"
           }
         }
       }
     },
-    "Hello, World!": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hallo, Welt!"
+    "Hello, World!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hallo, Welt!"
           }
         }
       }
     },
-    "Legal": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rechtliches"
+    "Legal" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechtliches"
           }
         }
       }
     },
-    "Privacy Policy": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Datenschutzbestimmungen"
+    "My Twitter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meine Webseite"
           }
         }
       }
     },
-    "Rate and Review": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bewerten und Rezensieren"
+    "My Website" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mein Twitter "
           }
         }
       }
     },
-    "Rate and review this app on the App Store": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bewerten und rezensieren Sie diese App im App Store"
+    "Privacy Policy" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datenschutzbestimmungen"
           }
         }
       }
     },
-    "Reach out to me": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kontaktieren Sie mich"
+    "Rate and Review" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewerten und Rezensieren"
           }
         }
       }
     },
-    "Read our privacy policy": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lesen Sie unsere Datenschutzbestimmungen"
+    "Rate and review this app on the App Store" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewerten und rezensieren Sie diese App im App Store"
           }
         }
       }
     },
-    "Read our terms of service": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lesen Sie unsere Nutzungsbedingungen"
+    "Reach out to me" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontaktieren Sie mich"
           }
         }
       }
     },
-    "Send me an email": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Schicken Sie mir eine E-Mail"
+    "Read our privacy policy" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lesen Sie unsere Datenschutzbestimmungen"
           }
         }
       }
     },
-    "Send Some Love": {
-      "localizations": {
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Schicken Sie etwas Liebe"
+    "Read our terms of service" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lesen Sie unsere Nutzungsbedingungen"
+          }
+        }
+      }
+    },
+    "Send me an email" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schicken Sie mir eine E-Mail"
+          }
+        }
+      }
+    },
+    "Send Some Love" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "<3"
+          }
+        }
+      }
+    },
+    "Terms of Service" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutzungsbedingungen"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

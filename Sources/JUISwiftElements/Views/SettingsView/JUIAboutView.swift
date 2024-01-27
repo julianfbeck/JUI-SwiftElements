@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Julian Beck on 27.06.23.
 //
@@ -21,41 +21,41 @@ public struct JUIAboutView: View {
         self.termsOfServiceLink = termsOfServiceLink
         self.highlightColor = highlightColor
     }
-
+    
     public var body: some View {
         Group {
             Section {
-                AboutViewItem(sfSymbol: "lock", header: String(localized: "Privacy Policy", bundle: .module ), subtext: String(localized: "Read our privacy policy"), highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "lock", header: String(localized: "Privacy Policy", bundle: .module ), subtext: String(localized: "Read our privacy policy", bundle: .module), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: privacyPolicyLink)!)
                 }
-                AboutViewItem(sfSymbol: "doc.text", header: String(localized: "Terms of Service"), subtext: String(localized: "Read our terms of service"), highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "doc.text", header: String(localized: "Terms of Service", bundle: .module), subtext: String(localized: "Read our terms of service", bundle: .module), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: termsOfServiceLink)!)
                 }
             } header: {
-                Text(String(localized: "Legal")).textCase(nil).font(.title2).fontWeight(.bold)
+                Text(String(localized: "Legal", bundle: .module)).textCase(nil).font(.title2).fontWeight(.bold)
             }
-
+            
             Section {
-                AboutViewItem(sfSymbol: "link", header: String(localized: "My Twitter"), subtext: String(localized: "Reach out to me"), highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "link", header: String(localized: "My Twitter", bundle: .module), subtext: String(localized: "Reach out to me",bundle: .module ), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://twitter.com/julianfbeck")!)
                 }
-                AboutViewItem(sfSymbol: "envelope", header: String(localized: "Give Feedback"), subtext: String(localized: "Send me an email"), highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "envelope", header: String(localized: "Give Feedback", bundle: .module), subtext: String(localized: "Send me an email", bundle: .module), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "mailto:\(mailLink)")!)
                 }
-                AboutViewItem(sfSymbol: "envelope", header: String(localized: "My Website"), subtext: String(localized: "Check out my Website"), highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "envelope", header: String(localized: "My Website", bundle: .module), subtext: String(localized: "Check out my Website", bundle: .module), highlightColor: highlightColor) {
                     UIApplication.shared.open(URL(string: "https://juli.sh")!)
                 }
                 
             } header: {
-                Text(String(localized: "Get in Touch")).textCase(nil).font(.title2).fontWeight(.bold)
+                Text(String(localized: "Get in Touch", bundle: .module)).textCase(nil).font(.title2).fontWeight(.bold)
             }
-
+            
             Section {
-                AboutViewItem(sfSymbol: "star.fill", header: String(localized: "Rate and Review"), subtext: String(localized: "Rate and review this app on the App Store"), highlightColor: highlightColor) {
+                AboutViewItem(sfSymbol: "star.fill", header: String(localized: "Rate and Review", bundle: .module), subtext: String(localized: "Rate and review this app on the App Store", bundle: .module), highlightColor: highlightColor) {
                     requestReview()
                 }
             } header: {
-                Text(String(localized: "Send Some Love")).textCase(nil).font(.title2).fontWeight(.bold)
+                Text(String(localized: "Send Some Love", bundle: .module)).textCase(nil).font(.title2).fontWeight(.bold)
             }
         }.listStyle(.insetGrouped)
         
@@ -67,7 +67,7 @@ struct AboutViewItem: View {
     var subtext: String
     var highlightColor: Color
     let onClick: () -> Void
-
+    
     var body: some View {
         Button {
             onClick()
@@ -80,7 +80,7 @@ struct AboutViewItem: View {
                 }
                 Spacer()
             }.padding(.vertical,1).contentShape(Rectangle())
-
+            
             
         }.buttonStyle(.plain)
     }
